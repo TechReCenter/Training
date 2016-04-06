@@ -6,22 +6,22 @@ $id = 0;
 $post = null;
 
 if (isset($_GET['id'])) {
-	$id = intval($_GET['id']);
+    $id = intval($_GET['id']);
 }
 
 if (isset($data[$id])) {
-	$post = $data[$id];
+    $post = $data[$id];
 }
 
 if (empty($post)) {
-	header('Location: error.php?message=Data not found');
+    header('Location: error.php?message=Data not found');
 }
 
 ?>
 
 
 <ul>
-	<li><a href="index.php">Home</a></li>
+    <li><a href="index.php">Home</a></li>
 </ul>
 
 <hr>
@@ -32,10 +32,10 @@ if (empty($post)) {
 <hr>
 
 <ul>
-	<?php foreach($data as $k => $item) { ?>
-	<?php if ($k == $id) continue ?>
-	<li>
-		<a href="detail.php?id=<?php echo $k ?>"><?php echo $item['title'] ?></a>
-	</li>
-	<?php } ?>
+    <?php foreach($data as $k => $item) { ?>
+    <?php if ($k == $id) continue ?>
+    <li>
+        <a href="detail.php?id=<?php echo $k ?>"><?php echo $item['title'] ?></a>
+    </li>
+    <?php } ?>
 </ul>
