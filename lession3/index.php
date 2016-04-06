@@ -55,4 +55,6 @@ if (class_exists($controllerName)) {
 
 if (method_exists($controllerInstance, $controllerAction)) {
 	$controllerInstance->{$controllerAction}();
+} else {
+	die("<strong>Error</strong>: action <strong>{$controllerName}->{$controllerAction}</strong> not found.");
 }
