@@ -5,6 +5,7 @@ class Controller
 	var $controller;
 	var $action;
 	var $route;
+    var $view;
 
 	public function __construct($options = [])
     {
@@ -31,7 +32,7 @@ class Controller
 		$view = $view ? $view : $this->action;
 
 		extract((array) $this->view);
-        
+
 		include ROOT . "/views/{$view}.phtml";
 	}
 }
