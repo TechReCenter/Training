@@ -1,0 +1,20 @@
+<ul>
+  <li><a href="<?php echo __() ?>">Home</a></li>
+  <li><a href="<?php echo __('about') ?>">About</a></li>
+</ul>
+
+<hr>
+
+<h3><?php echo $post['title'] ?></a></h3>
+<p><?php echo $post['content'] ?></p>
+
+<hr>
+
+<ul>
+  <?php foreach($data as $k => $item) { ?>
+  <?php if ($k == $id) continue ?>
+  <li>
+    <a href="<?php echo __($item['link']) ?>"><?php echo $item['title'] ?></a>
+  </li>
+  <?php } ?>
+</ul>
