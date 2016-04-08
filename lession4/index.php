@@ -10,9 +10,9 @@ define('CONTROLLERS', ROOT . '/controllers');
  */
 spl_autoload_register(function($name) {
   if (strpos($name, 'Controller') !== false) {
-    $path = ROOT . "/controllers/{$name}.php";
+    $path = CONTROLLERS . "/{$name}.php";
   } else {
-    $path = ROOT . "/models/{$name}.php";
+    $path = MODELS . "/{$name}.php";
   }
 
   if (file_exists($path)) {

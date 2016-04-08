@@ -33,6 +33,6 @@ class Controller
 
 		extract((array) $this->view);
 
-		include ROOT . "/views/{$view}.phtml";
+		include VIEWS . "/{$view}.phtml";
 	}
 }
