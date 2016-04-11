@@ -81,7 +81,5 @@ if (method_exists($controllerInstance, $controllerAction)) {
   exit("<strong>Error</strong>: action <strong>{$controllerName}->{$controllerAction}</strong> not found.");
 }
 
-trace(get_included_files());
-
 
 
