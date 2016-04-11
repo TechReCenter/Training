@@ -6,4 +6,27 @@
 
 <hr>
 
-Create page
+<div class="content">
+  <form method="post">
+    <table>
+      <tr>
+        <td><label>Title</label></td>
+        <td><input type="text" name="title" value="" size="100" placeholder="Title" /></td>
+      </tr>
+      <tr>
+        <td><label>Content</label></td>
+        <td><textarea cols="98" name="content" rows="30"></textarea></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td><input type="submit" value="Create" /></td>
+      </tr>
+      <?php if ($message) { ?>
+      <tr>
+        <td></td>
+        <td><?php echo $message ?></td>
+      </tr>
+      <?php } ?>
+    </table>
+  </form>
+</div>
