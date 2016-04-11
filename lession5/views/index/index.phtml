@@ -11,7 +11,7 @@
   <li>
     <h3><a href="<?php echo __($item->link) ?>"><?php echo $item->title ?></a></h3>
     <p><?php echo $item->content ?></p>
-    <small>Created: <?php echo date('d/m/Y', $item->created) ?></small>
+    <small>Created: <?php echo date('d/m/Y', $item->created) ?></small> >> 
     <a href="<?php echo __('admin/update?id=' . $item->id) ?>">Edit</a>
   </li>
   <?php } ?>
