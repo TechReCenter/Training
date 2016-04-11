@@ -4,11 +4,10 @@ class Node extends Model
 {
     public static function getPost($id)
     {
-        $data = static::getList();
+        $stm = static::getCommand()->prepare('SELECT * FROM node WHERE id=?');
+        $stm->execute(array($id));
 
-        if (isset($data[$id])) {
-            return $data[$id];
-        }
+        return $stm->fetch(PDO::FETCH_OBJ);
     }
 
     public static function getList($status = 1) 
@@ -19,6 +18,7 @@ class Node extends Model
         $nodes = array();
 
         while($row = $stm->fetch(PDO::FETCH_OBJ)) {
+            $row->teaser = mb_substr($row->content, 0, 400) . '...';
             $nodes[$row->id] = $row;
         }
 
