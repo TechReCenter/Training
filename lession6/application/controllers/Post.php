@@ -11,10 +11,10 @@ class Post extends Controller
 	{
 		$this->load->model('node');
 
-		$data['title'] = 'Home | Welcome';
-		$data['nodes'] = $this->node->getNodes([]);
+		$this->view->title = 'Home | Welcome';
+		$this->view->nodes = $this->node->getNodes([]);
 
-		$this->load->view('post/index', $data);
+		$this->render();
 	}
 		
 	public function detail($id)
@@ -26,12 +26,12 @@ class Post extends Controller
 		if(empty($node)) {
 			redirect('/');
 		}
-			
-		$data['node'] = $node;
-		$data['title'] = $node->title;
-		$data['nodes'] = $this->node->getNodes();
 
-		$this->load->view('post/detail', $data);
+		$this->view->node = $node;
+		$this->view->title = $node->title;
+		$this->view->nodes = $this->node->getNodes();
+
+		$this->render();
 	}
 	
 	public function create()
