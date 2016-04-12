@@ -40,3 +40,19 @@ function trace($data) {
     print_r($data);
     echo '</pre>';
 }
+
+/**
+ * Create a link to router
+ * @example __('detail/1');
+ * @example __('index/detail?id=1');
+ *
+ * @param string $router
+ * @return string
+ */
+function __($router = '') {
+    static $dir = null;
+    if ($dir === null) {
+        $dir = '/' . trim(dirname($_SERVER['SCRIPT_NAME']), '\,/');
+    }
+    return ($router != "/" ? "{$dir}/{$router}" : "{$dir}/");
+}
