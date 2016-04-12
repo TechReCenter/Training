@@ -29,6 +29,7 @@ class Node extends Model
 		}
 
 		$query = $this->db->where($filter);
+		$query = $this->db->order_by('created DESC');
 		$query = $this->db->get('node', $limit, $offset);
 
 		foreach($query->result() as $row) {
